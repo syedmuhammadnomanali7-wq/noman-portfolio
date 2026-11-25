@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Muhammad Noman Ali | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- GLOBAL STYLES & VARIABLES --- */
+        :root {
+            --bg-color: #0a0a0f;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-color: #e0e0e0;
+            --gold: #d4af37;
+            --cyan: #00f2fe;
+            --font-main: 'Poppins', sans-serif;
+            --font-heading: 'Outfit', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: var(--font-main);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .logo span { color: var(--gold); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cyan);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--cyan); }
+
+        /* --- HERO SECTION --- */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 120px 10% 50px;
+            position: relative;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h3 {
+            font-size: 20px;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 60px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(to right, var(--gold), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .typing-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 30px;
+            height: 30px;
+        }
+        .typing-text span { color: var(--cyan); }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--gold), #ffdf00);
+            color: #000;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid var(--cyan);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 242, 254, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 40px rgba(0, 242, 254, 0.2);
+            z-index: 2;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .glow-circle {
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--gold), var(--cyan));
+            filter: blur(40px);
+            opacity: 0.5;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* --- SECTION TITLES --- */
+        section { padding: 100px 10%; }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #fff;
+        }
+        .section-title span { color: var(--gold); }
+
+        /* --- ABOUT & INFO --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #b0b0b0;
+            margin-bottom: 20px;
+        }
+
+        .info-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-list li {
+            font-size: 15px;
+            color: #b0b0b0;
+        }
+
+        .info-list li strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* --- EDUCATION & EXPERIENCE TIMELINE --- */
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: rgba(255,255,255,0.1);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--bg-color);
+            border: 3px solid var(--cyan);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.right::after {
+            left: -8px;
+            border-color: var(--gold);
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background: var(--card-bg);
+            position: relative;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        .timeline-content h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content h4 {
+            font-size: 14px;
+            color: var(--cyan);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* --- CERTIFICATES --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .cert-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .cert-card:hover {
+            transform: scale(1.02);
+            border-color: var(--gold);
+        }
+
+        .cert-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cert-card h3 {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+            width: 350px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyan);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1);
+            background: rgba(0, 242, 254, 0.02);
+        }
+
+        .contact-card i {
+            font-size: 45px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .contact-card p {
+            color: #b0b0b0;
+            font-size: 16px;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        /* --- SCROLL ANIMATIONS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- KEYFRAMES --- */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+        footer span { color: var(--gold); }
+        .creations-text {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--cyan);
+            letter-spacing: 1px;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 900px) {
+            nav { padding: 20px; }
+            .nav-links { display: none; }
+            #home { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
+            .hero-content h1 { font-size: 40px; }
+            .hero-btns { justify-content: center; }
+            .hero-image img { width: 250px; height: 250px; margin-bottom: 30px; }
+            .glow-circle { width: 280px; height: 280px; }
+            
+            .about-grid { grid-template-columns: 1fr; }
+            .info-list { grid-template-columns: 1fr; }
+
+            .timeline-container::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item.right { left: 0%; }
+            .timeline-item::after { left: 23px; }
+            .timeline-item.right::after { left: 23px; }
+            
+            .contact-card { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">NOMAN <span>ALI</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="hero-content reveal">
+            <h3>Hello, I am</h3>
+            <h1>Syed Muhammad <br><span>Noman Ali</span></h1>
+            <div class="typing-text">I am a <span id="typewriter"></span></div>
+            <div class="hero-btns">
+                <a href="#about" class="btn btn-primary">About Me</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-image reveal">
+            <div class="glow-circle"></div>
+            <!-- YAHAN CHANGE KIYA HAI: Extension ab .jpg hai -->
+            <img src="noman ok photo.jpg" alt="Syed Muhammad Noman Ali">
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2 class="section-title reveal">About <span>Me</span></h2>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p>I am a dedicated and hardworking individual currently pursuing my ICS (Physics) from Gov Islamia College Lahore Cantt. I have a strong passion for technology, computer operations, and sales management. I have successfully completed my Matriculation in Computer Science and hold a diploma as a Computer Operator.</p>
+                <p>My professional journey includes working as a Sales Supervisor in Dubai and as a Computer Teacher in Lahore. I am always eager to learn new skills and take on challenging roles to further enhance my professional career.</p>
+            </div>
+            <div class="reveal">
+                <ul class="info-list">
+                    <li><strong>Full Name:</strong> Syed Muhammad Noman Ali</li>
+                    <li><strong>Father's Name:</strong> Syed Ahmed Bilal</li>
+                    <li><strong>Date of Birth:</strong> 14-Jan-2009</li>
+                    <li><strong>CNIC:</strong> 35201-4798707-5</li>
+                    <li><strong>Marital Status:</strong> Unmarried</li>
+                    <li><strong>Nationality:</strong> Pakistani</li>
+                    <li><strong>Current Study:</strong> ICS (Physics) 2nd Year</li>
+                    <li><strong>City:</strong> Lahore, Pakistan</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education">
+        <h2 class="section-title reveal">My <span>Education</span></h2>
+        <div class="timeline-container">
+            
+            <div class="timeline-item left reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">Ongoing</span>
+                    <h3>ICS (Physics)</h3>
+                    <h4>Gov Islamia College Lahore Cantt</h4>
+                    <p>Currently in 2nd year, studying Intermediate in Computer Science with Physics. Focused on programming, mathematics, and physical sciences.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">2026</span>
+                    <h3>Diploma in Computer Operator</h3>
+                    <h4>Gov Vocational Training Institute Barki</h4>
+                    <p>Completed an 8-month National Vocational Qualification (Level 2) in Information Technology. Learned MS Office, data entry, and computer system maintenance.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">2025</span>
+                    <h3>Matriculation (Science Group)</h3>
+                    <h4>Board of Intermediate & Secondary Education, Lahore</h4>
+                    <p>Completed Secondary School Certificate with Computer Science as a major subject. Secured 567/1200 marks (51%).</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+        <h2 class="section-title reveal">Work <span>Experience</span></h2>
+        <div class="timeline-container">
+
+            <div class="timeline-item right reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">Oct 2026 - Present</span>
+                    <h3>Sales Supervisor</h3>
+                    <h4>Dubai Jewelery Box and Packages</h4>
+                    <p>Rejoined as a Sales Supervisor. Managing sales operations, supervising staff, and ensuring excellent customer service and packaging standards.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">Aug 2026 - Oct 2026</span>
+                    <h3>Computer Teacher</h3>
+                    <h4>Tariq Model High School Ghaziabad</h4>
+                    <p>Taught computer fundamentals and basic IT skills to students. Managed computer lab activities and guided students in practical applications.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right reveal">
+                <div class="timeline-content">
+                    <span class="timeline-date">Jan 2026 - Aug 2026</span>
+                    <h3>Sales Supervisor</h3>
+                    <h4>Dubai Jewelery Box and Packages</h4>
+                    <p>Supervised sales of jewelry packaging products. Handled customer queries, managed inventory, and ensured smooth daily operations.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section id="certificates">
+        <h2 class="section-title reveal">My <span>Certificates</span></h2>
+        <div class="cert-grid">
+            <div class="cert-card reveal">
+                <img src="noman matric rc.jpeg" alt="Matric Result Card">
+                <h3>Matriculation Result (2025)</h3>
+            </div>
+            <div class="cert-card reveal">
+                <img src="noman co certificate.jpeg" alt="Computer Operator Diploma">
+                <h3>NAVTTC Diploma (2026)</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2 class="section-title reveal">Contact <span>Me</span></h2>
+        <div class="contact-container reveal">
+            <!-- Phone Card -->
+            <a href="tel:+923266501314" class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Call Me</h3>
+                <p>0326-6501314</p>
+            </a>
+            
+            <!-- Email Card -->
+            <a href="mailto:syedmuhammadnomanali7@gmail.com" class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Me</h3>
+                <p>syedmuhammadnomanali7@gmail.com</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Syed Muhammad Noman Ali. All Rights Reserved. Designed with <span>❤</span></p>
+        <p class="creations-text">Bilal Marghoob Creations</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Typing Effect Logic
+        const textArray = ["Computer Operator", "Sales Supervisor", "Computer Teacher", "ICS Student"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById("typewriter");
+
+        function type() {
+            const currentText = textArray[textIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000; 
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % textArray.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(type, 1000);
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; 
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal(); 
+    </script>
+</body>
+</html>
