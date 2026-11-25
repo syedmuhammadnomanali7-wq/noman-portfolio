@@ -90,17 +90,20 @@
         }
 
         /* --- NAVBAR --- */
-        nav {
+        header {
             position: fixed;
             top: 0;
             width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
             padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: rgba(10, 10, 15, 0.8);
             backdrop-filter: blur(10px);
-            z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
@@ -535,165 +538,170 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">NOMAN <span>ALI</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav>
+            <div class="logo">NOMAN <span>ALI</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- HERO SECTION -->
-    <section id="home">
-        <div class="hero-content reveal">
-            <h3>Hello, I am Shah Gee</h3>
-            <h1>Syed Muhammad <br><span>Noman Ali</span></h1>
-            <div class="typing-text">I am an <span id="typewriter"></span></div>
-            <div class="hero-btns">
-                <a href="#about" class="btn btn-primary">About Me</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            </div>
-        </div>
-        <div class="hero-image reveal">
-            <div class="glow-circle"></div>
-            <img src="noman ok photo.jpg" alt="Syed Muhammad Noman Ali - AI Prompt Expert & Website Developer">
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <h2 class="section-title reveal">About <span>Me</span></h2>
-        <div class="about-grid">
-            <div class="about-text reveal">
-                <p>I am Syed Muhammad Noman Ali (also known as Shah Gee). I am a dedicated professional currently pursuing my ICS (Physics) from Gov Islamia College Lahore Cantt. I possess a diverse skillset including <strong>AI Prompt Engineering, Website Development, and SEO (Search Engine Optimization)</strong>. I am also a fast typist with a typing speed of <strong>60+ WPM</strong>. I have successfully completed my Matriculation in Computer Science and hold a diploma as a Computer Operator.</p>
-                <p>My professional journey includes working as a Sales Officer and Sales Supervisor in Dubai jewellery box & Packages, as well as a Computer Teacher in Lahore. I am always eager to learn new skills and take on challenging roles to further enhance my professional career in tech and management.</p>
-            </div>
-            <div class="reveal">
-                <ul class="info-list">
-                    <li><strong>Full Name:</strong> Syed Muhammad Noman Ali</li>
-                    <li><strong>Alias:</strong> Shah Gee</li>
-                    <li><strong>Father's Name:</strong> Syed Ahmed Bilal</li>
-                    <li><strong>Date of Birth:</strong> 14-Jan-2009</li>
-                    <li><strong>CNIC:</strong> 35201-4798707-5</li>
-                    <li><strong>Typing Speed:</strong> 60+ WPM</li>
-                    <li><strong>Marital Status:</strong> Unmarried</li>
-                    <li><strong>Nationality:</strong> Pakistani</li>
-                    <li><strong>Current Study:</strong> ICS (Physics) 2nd Year</li>
-                    <li><strong>City:</strong> Lahore, Pakistan</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDUCATION SECTION -->
-    <section id="education">
-        <h2 class="section-title reveal">My <span>Education</span></h2>
-        <div class="timeline-container">
-            
-            <div class="timeline-item left reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">Ongoing</span>
-                    <h3>ICS (Physics)</h3>
-                    <h4>Gov Islamia College Lahore Cantt</h4>
-                    <p>Currently in 2nd year, studying Intermediate in Computer Science with Physics. Focused on programming, mathematics, and physical sciences.</p>
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home">
+            <div class="hero-content reveal">
+                <h3>Hello, I am Shah Gee</h3>
+                <h1>Syed Muhammad <br><span>Noman Ali</span></h1>
+                <div class="typing-text">I am an <span id="typewriter"></span></div>
+                <div class="hero-btns">
+                    <a href="#about" class="btn btn-primary">About Me</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
+            <div class="hero-image reveal">
+                <div class="glow-circle"></div>
+                <img src="noman ok photo.jpg" alt="Syed Muhammad Noman Ali - AI Prompt Expert & Website Developer">
+            </div>
+        </section>
 
-            <div class="timeline-item right reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">2026</span>
-                    <h3>Diploma in Computer Operator</h3>
-                    <h4>Gov Vocational Training Institute Barki</h4>
-                    <p>Completed an 8-month National Vocational Qualification (Level 2) in Information Technology. Learned MS Office, data entry, and computer system maintenance.</p>
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2 class="section-title reveal">About <span>Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I am Syed Muhammad Noman Ali (also known as Shah Gee). I am a dedicated professional currently pursuing my ICS (Physics) from Gov Islamia College Lahore Cantt. I possess a diverse skillset including <strong>AI Prompt Engineering, Website Development, and SEO (Search Engine Optimization)</strong>. I am also a fast typist with a typing speed of <strong>60+ WPM</strong>. I have successfully completed my Matriculation in Computer Science and hold a diploma as a Computer Operator.</p>
+                    <p>My professional journey includes working as a Sales Officer and Sales Supervisor in Dubai, as well as a Computer Teacher in Lahore. I am always eager to learn new skills and take on challenging roles to further enhance my professional career in tech and management.</p>
+                </div>
+                <div class="reveal">
+                    <ul class="info-list">
+                        <li><strong>Full Name:</strong> Syed Muhammad Noman Ali</li>
+                        <li><strong>Alias:</strong> Shah Gee</li>
+                        <li><strong>Father's Name:</strong> Syed Ahmed Bilal</li>
+                        <li><strong>Date of Birth:</strong> 14-Jan-2009</li>
+                        <li><strong>CNIC:</strong> 35201-4798707-5</li>
+                        <li><strong>Typing Speed:</strong> 60+ WPM</li>
+                        <li><strong>Marital Status:</strong> Unmarried</li>
+                        <li><strong>Nationality:</strong> Pakistani</li>
+                        <li><strong>Current Study:</strong> ICS (Physics) 2nd Year</li>
+                        <li><strong>City:</strong> Lahore, Pakistan</li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="timeline-item left reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">2025</span>
-                    <h3>Matriculation (Science Group)</h3>
-                    <h4>Board of Intermediate & Secondary Education, Lahore</h4>
-                    <p>Completed Secondary School Certificate with Computer Science as a major subject. Secured 567/1200 marks (51%).</p>
+        <!-- EDUCATION SECTION -->
+        <section id="education">
+            <h2 class="section-title reveal">My <span>Education</span></h2>
+            <div class="timeline-container">
+                
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Ongoing</span>
+                        <h3>ICS (Physics)</h3>
+                        <h4>Gov Islamia College Lahore Cantt</h4>
+                        <p>Currently in 2nd year, studying Intermediate in Computer Science with Physics. Focused on programming, mathematics, and physical sciences.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2026</span>
+                        <h3>Diploma in Computer Operator</h3>
+                        <h4>Gov Vocational Training Institute Barki</h4>
+                        <p>Completed an 8-month National Vocational Qualification (Level 2) in Information Technology. Learned MS Office, data entry, and computer system maintenance.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3>Matriculation (Science Group)</h3>
+                        <h4>Board of Intermediate & Secondary Education, Lahore</h4>
+                        <p>Completed Secondary School Certificate with Computer Science as a major subject. Secured 567/1200 marks (51%).</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience">
+            <h2 class="section-title reveal">Work <span>Experience</span></h2>
+            <div class="timeline-container">
+
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2026 - Present</span>
+                        <h3>Sales Supervisor / Sales Officer</h3>
+                        <h4>Dubai Jewelery Box and Packages</h4>
+                        <p>Rejoined as a Sales Supervisor. Managing sales operations, supervising staff, and ensuring excellent customer service and packaging standards.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Aug 2026 - Oct 2026</span>
+                        <h3>Computer Teacher</h3>
+                        <h4>Tariq Model High School Ghaziabad</h4>
+                        <p>Taught computer fundamentals and basic IT skills to students. Managed computer lab activities and guided students in practical applications.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jan 2026 - Aug 2026</span>
+                        <h3>Sales Supervisor</h3>
+                        <h4>Dubai Jewelery Box and Packages</h4>
+                        <p>Supervised sales of jewelry packaging products. Handled customer queries, managed inventory, and ensured smooth daily operations.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CERTIFICATES SECTION -->
+        <section id="certificates">
+            <h2 class="section-title reveal">My <span>Certificates</span></h2>
+            <div class="cert-grid">
+                <div class="cert-card reveal">
+                    <!-- SEO: Added loading="lazy" for faster page speed -->
+                    <img src="noman matric rc.jpeg" alt="Syed Muhammad Noman Ali Matric Result Card" loading="lazy">
+                    <h3>Matriculation Result (2025)</h3>
+                </div>
+                <div class="cert-card reveal">
+                    <img src="noman co certificate.jpeg" alt="Syed Muhammad Noman Ali Computer Operator Diploma" loading="lazy">
+                    <h3>NAVTTC Diploma (2026)</h3>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience">
-        <h2 class="section-title reveal">Work <span>Experience</span></h2>
-        <div class="timeline-container">
-
-            <div class="timeline-item right reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">Oct 2026 - Present</span>
-                    <h3>Sales Supervisor / Sales Officer</h3>
-                    <h4>Dubai Jewelery Box and Packages</h4>
-                    <p>Rejoined as a Sales Supervisor. Managing sales operations, supervising staff, and ensuring excellent customer service and packaging standards.</p>
-                </div>
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2 class="section-title reveal">Contact <span>Me</span></h2>
+            <div class="contact-container reveal">
+                <!-- Phone Card -->
+                <a href="tel:+923266501314" class="contact-card" aria-label="Call Syed Muhammad Noman Ali">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Me</h3>
+                    <p>0326-6501314</p>
+                </a>
+                
+                <!-- Email Card -->
+                <a href="mailto:syedmuhammadnomanali7@gmail.com" class="contact-card" aria-label="Email Syed Muhammad Noman Ali">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Me</h3>
+                    <p>syedmuhammadnomanali7@gmail.com</p>
+                </a>
             </div>
-
-            <div class="timeline-item left reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">Aug 2026 - Oct 2026</span>
-                    <h3>Computer Teacher</h3>
-                    <h4>Tariq Model High School Ghaziabad</h4>
-                    <p>Taught computer fundamentals and basic IT skills to students. Managed computer lab activities and guided students in practical applications.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item right reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">Jan 2026 - Aug 2026</span>
-                    <h3>Sales Supervisor</h3>
-                    <h4>Dubai Jewelery Box and Packages</h4>
-                    <p>Supervised sales of jewelry packaging products. Handled customer queries, managed inventory, and ensured smooth daily operations.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CERTIFICATES SECTION -->
-    <section id="certificates">
-        <h2 class="section-title reveal">My <span>Certificates</span></h2>
-        <div class="cert-grid">
-            <div class="cert-card reveal">
-                <img src="noman matric rc.jpeg" alt="Syed Muhammad Noman Ali Matric Result Card">
-                <h3>Matriculation Result (2025)</h3>
-            </div>
-            <div class="cert-card reveal">
-                <img src="noman co certificate.jpeg" alt="Syed Muhammad Noman Ali Computer Operator Diploma">
-                <h3>NAVTTC Diploma (2026)</h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2 class="section-title reveal">Contact <span>Me</span></h2>
-        <div class="contact-container reveal">
-            <!-- Phone Card -->
-            <a href="tel:+923266501314" class="contact-card">
-                <i class="fas fa-phone-alt"></i>
-                <h3>Call Me</h3>
-                <p>0326-6501314</p>
-            </a>
-            
-            <!-- Email Card -->
-            <a href="mailto:syedmuhammadnomanali7@gmail.com" class="contact-card">
-                <i class="fas fa-envelope"></i>
-                <h3>Email Me</h3>
-                <p>syedmuhammadnomanali7@gmail.com</p>
-            </a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer>
@@ -703,7 +711,7 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // Typing Effect Logic (Added Typing Speed 60+ WPM)
+        // Typing Effect Logic
         const textArray = ["AI Prompt Expert", "Website Developer", "SEO Specialist", "Typing Speed 60+ WPM", "Computer Operator", "Sales Supervisor", "Computer Teacher"];
         let textIndex = 0;
         let charIndex = 0;
