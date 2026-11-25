@@ -113,9 +113,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 15, 0.8);
+            background: rgba(10, 10, 15, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: relative;
         }
 
         .logo {
@@ -154,6 +155,21 @@
 
         .nav-links a:hover::after { width: 100%; }
         .nav-links a:hover { color: var(--cyan); }
+
+        /* Hamburger Menu Icon (Hidden on Desktop) */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--gold);
+            transition: 0.3s;
+        }
 
         /* --- HERO SECTION --- */
         #home {
@@ -524,26 +540,89 @@
             letter-spacing: 1px;
         }
 
-        /* --- RESPONSIVE DESIGN --- */
+        /* ========================================= */
+        /* --- RESPONSIVE DESIGN (MOBILE & TABLET) --- */
+        /* ========================================= */
         @media (max-width: 900px) {
-            nav { padding: 20px; }
-            .nav-links { display: none; }
-            #home { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
-            .hero-content h1 { font-size: 40px; }
-            .hero-btns { justify-content: center; }
-            .hero-image img { width: 250px; height: 250px; margin-bottom: 30px; }
-            .glow-circle { width: 280px; height: 280px; }
-            
-            .about-grid { grid-template-columns: 1fr; }
-            .info-list { grid-template-columns: 1fr; }
+            /* Navbar Mobile */
+            nav { 
+                padding: 15px 20px; 
+            }
+            .hamburger { 
+                display: flex; 
+            }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: -100%; /* Hidden by default */
+                width: 100%;
+                background: rgba(10, 10, 15, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 20px;
+                transition: 0.4s ease;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+            .nav-links.active {
+                left: 0; /* Show when active */
+            }
 
-            .timeline-container::after { left: 31px; }
-            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            /* Hero Mobile */
+            #home { 
+                flex-direction: column-reverse; 
+                text-align: center; 
+                padding: 140px 5% 50px; 
+                gap: 40px;
+            }
+            .hero-content h1 { font-size: 34px; }
+            .hero-content h3 { font-size: 16px; }
+            .typing-text { font-size: 18px; height: 25px; }
+            .hero-btns { 
+                justify-content: center; 
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-image img { 
+                width: 220px; 
+                height: 220px; 
+            }
+            .glow-circle { 
+                width: 240px; 
+                height: 240px; 
+            }
+
+            /* Sections Global */
+            section { padding: 70px 5%; }
+            .section-title { font-size: 30px; margin-bottom: 40px; }
+
+            /* About Mobile */
+            .about-grid { grid-template-columns: 1fr; gap: 30px; }
+            .info-list { grid-template-columns: 1fr; }
+            .about-text p { font-size: 14px; text-align: center; }
+
+            /* Timeline Mobile */
+            .timeline-container::after { left: 20px; }
+            .timeline-item { 
+                width: 100%; 
+                padding-left: 50px; 
+                padding-right: 0px; 
+                margin-bottom: 20px;
+            }
             .timeline-item.right { left: 0%; }
-            .timeline-item::after { left: 23px; }
-            .timeline-item.right::after { left: 23px; }
+            .timeline-item::after { 
+                left: 12px; 
+                width: 14px;
+                height: 14px;
+            }
+            .timeline-item.right::after { left: 12px; }
             
-            .contact-card { width: 100%; }
+            /* Certificates Mobile */
+            .cert-grid { grid-template-columns: 1fr; }
+            
+            /* Contact Mobile */
+            .contact-container { flex-direction: column; align-items: center; }
+            .contact-card { width: 100%; padding: 30px 20px; }
         }
     </style>
 </head>
@@ -557,7 +636,15 @@
     <header>
         <nav>
             <div class="logo">NOMAN <span>ALI</span></div>
-            <ul class="nav-links">
+            
+            <!-- Mobile Hamburger Menu Icon -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
@@ -777,6 +864,21 @@
 
         window.addEventListener("scroll", reveal);
         reveal(); 
+
+        // Mobile Menu Toggle Logic (Hamburger)
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
